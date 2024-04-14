@@ -1,4 +1,5 @@
 public class firstClass {
+    @SuppressWarnings("LanguageDetectionInspection")
     public static void main(String[] args) {
         System.out.println("Hello World");
         String a = "1123";
