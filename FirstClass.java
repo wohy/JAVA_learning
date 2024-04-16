@@ -1,4 +1,4 @@
-public class firstClass {
+public class FirstClass {
     @SuppressWarnings("LanguageDetectionInspection")
     public static void main(String[] args) {
         System.out.println("Hello World");
@@ -20,9 +20,9 @@ public class firstClass {
         short g = 123;
         float h = 123.456f;
 
-        System.out.println(a);
-        System.out.println(b);
-        System.out.println(c);
+        System.out.println("a: " + a);
+        System.out.println("b: " + b);
+        System.out.println("c: " + c);
         System.out.println(e);
         System.out.println(f);
         System.out.println(g);
