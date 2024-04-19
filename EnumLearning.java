@@ -28,8 +28,8 @@ enum Weekday {
 
     public void toDoToday() {
         System.out.println(this); // 对应的 dayName
-        System.out.println(this.toString()); // 对应的 dayValue
-        System.out.println(this.name());
+        System.out.println(this.toString()); // 对应的 dayName
+        System.out.println(this.name()); // 对应的 dayValue
         if (this == Weekday.SATURDAY || this == Weekday.SUNDAY) {
             System.out.println("Today is " + this + ". rest");
         } else  {
