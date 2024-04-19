@@ -15,7 +15,7 @@ enum Weekday {
 
     public final int dayValue;
     private final String dayName;
-    private Weekday(int dayValue, String dayName) {
+    Weekday(int dayValue, String dayName) {
             this.dayValue = dayValue;
             this.dayName = dayName;
     }
