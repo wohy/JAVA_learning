@@ -28,5 +28,11 @@ public class FirstClass {
         System.out.println(g);
         System.out.println(h);
         System.out.println(f1);
+
+
+        short i = 5;
+        i = (short)(i + 2);
+        System.out.println(i);
+
     }
 }

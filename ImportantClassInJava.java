@@ -55,5 +55,21 @@ public class ImportantClassInJava {
         String s = new String(cs); // char[] -> String
         System.out.println(s);
 
+        String str1 = 3.5f + "";
+        System.out.println(str1);
+        System.out.println(3+4+"hello!");
+        System.out.println("a"+3+4);
+        System.out.println('a'+1+"b");
+        System.out.println("hello"+'a'+1);
+        System.out.println('*' + 1); // 43
+        System.out.println("*   *"); // *   *
+        System.out.println("*\t*"); // *   *
+        System.out.println('*' +  "\t" + "*"); // *   *
+        System.out.println('*' +  '\t' + "*"); // 51*
+        System.out.println('*' +  "\t" + '*'); // *   *
+        System.out.println('*' +  '\t' + '*'); //93
+
+
+
     }
 }
