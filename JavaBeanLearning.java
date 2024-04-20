@@ -2,7 +2,7 @@ import java.beans.*;
 
 public class JavaBeanLearning {
     public static void main(String[] args) throws Exception {
-        BeanInfo beanInfo = Introspector.getBeanInfo(Person.class);
+        BeanInfo beanInfo = Introspector.getBeanInfo(PersonInfo.class);
         // 循环打印 pd beanInfo 上的属性。  age/class/name，class 是从 Object 继承的 getClass() 方法带来的
         for (PropertyDescriptor pd : beanInfo.getPropertyDescriptors()) {
             System.out.println(pd.getName());
