@@ -15,7 +15,8 @@ public class ImportantClassInJava {
         System.out.println(s1.equals(s2)); // true
 
         // Java 字符串的一个重要特点是字符串不可变，这种不可变性是通过内部的 private final char[] 字段，以及没有任何修改 char[] 的方法实现的
-        // 为啥可变更了？
+        // 为啥可变更了？ 只是生成了一个新的字符串，原指针指向了该新的字符串
+
         String s3 = "Hello";
         System.out.println(s3); // Hello
         s3 = s3.toUpperCase();
@@ -33,6 +34,11 @@ public class ImportantClassInJava {
         // 占位 %s：显示字符串；%d：显示整数；%x：显示十六进制整数；%f：显示浮点数。 %.2f两位小数浮点数
         System.out.printf((s5) + "%n", "Alice", 80);
         System.out.printf("Hi %s, your score is %.2f!%n", "Bob", 59.5);
+
+        // 循环拼接字符串时，使用 StringBuilder
+        // 使用 +  拼接每次循环都会创建新的字符串对象，然后扔掉旧的字符串。这样，绝大部分字符串都是临时对象，不但浪费内存，还会影响GC效率。
+        // 为了能高效拼接字符串，Java标准库提供了 StringBuilder，它是一个可变对象，可以预分配缓冲区，这样，往StringBuilder中新增字符时，不会创建新的临时对象。
+        // StringJoiner 使用某个符号拼接字符串
 
         // 类型转换
         // 1.要把任意基本类型或引用类型转换为字符串，可以使用静态方法valueOf()
