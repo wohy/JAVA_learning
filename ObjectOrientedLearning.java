@@ -22,18 +22,19 @@ public class ObjectOrientedLearning {
         nameArray = new String[] {"d", "e", "f"};
         System.out.println(personsName1.getName()); // d, b, c
 
-        // String 为不可变类 传入 setName 中参数依然时原有的 e
+        // String 为不可变类 传入 setName 中参数依然是原有的 e
         // 除了 String 外，所有的包装类型都是不变类
         PersonsName personsName2 = new PersonsName();
         String nameString = "e";
         personsName2.setName(nameString);
         System.out.println(personsName2.getName()); // e
+        // 只是 nameString 指向了另一块内存地址，原 传入 setName 中的值并未改变
         nameString = "f";
         System.out.println(personsName2.getName()); // e
 
 
 
-        // 构造方法 根据入参决定调用的哪个构造方法
+        // 构造方法 根据入参决定调用的哪个构造方法  Classes 多态
         Classes classOne = new Classes("数学");
         Classes classTwo = new Classes("体育", 90);
         System.out.println(classOne); // 数学课：45 分钟
