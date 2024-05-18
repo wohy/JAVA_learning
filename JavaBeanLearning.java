@@ -16,7 +16,7 @@ class Person {
     private String name;
     private int age;
 
-    // 定义好对应属性后，直接邮件自动生成 getter setter。 之后导入 beans 库 可使用
+    // 定义好对应属性后，直接右键自动生成 getter setter。 之后导入 beans 库 可使用
     public String getName() {
         return name;
     }
