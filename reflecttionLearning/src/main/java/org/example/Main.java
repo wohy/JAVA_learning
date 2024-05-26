@@ -107,7 +107,6 @@ public class Main {
 
         // 实现动态代理
         ProxyHandler handler = new ProxyHandler();
-
         // 创建代理对象，使用接口 Hello 类型来引用
         Hello proxyHello = (Hello) Proxy.newProxyInstance(
                 Main.class.getClassLoader(),
@@ -121,10 +120,8 @@ public class Main {
                 Main.class.getClassLoader(),
                 new Class<?>[] {Greet.class},
                 handler);
-
         proxyGreet.sayHello("小明", "night"); // 这次代理了是 sayHello 方法  Hello, 小明, Good Night
         proxyGreet.sayHi("小明", "evening"); // 这次代理了是 sayHi 方法  Hi, 小明, Good Evening
-
         // 通过代理调用方法，使用接口 Hello 和 Hi 引用
         proxyHello.sayHello("小胡", "morning");  //这次代理了是 sayHello 方法    Hello, 小胡, Good Morning
         proxyHi.sayHi("小胡", "afternoon"); // 这次代理了是 sayHi 方法    Hi, 小胡, Good Afternoon
@@ -142,6 +139,7 @@ public class Main {
             System.out.println("字段值为：" + value);
         }
     }
+
     // 设置字段值
     public static void setValue(Field field, int modifiers, Object personTwo, Object value) throws IllegalAccessException {
         if (Modifier.isPublic(modifiers)) {
@@ -204,17 +202,15 @@ class DynamicLoading {
     }
 }
 
-// 接口定义
+
+// 被代理 接口
 interface Hello {
     void sayHello(String name, String time);
 }
-
 interface Hi {
     void sayHi(String name, String time);
 }
-
 interface Greet extends Hi, Hello {}
-
 // 代理处理器
 class ProxyHandler implements InvocationHandler {
     private String capitalize(String time) {

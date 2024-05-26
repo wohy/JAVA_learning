@@ -9,6 +9,8 @@
         <module name="annotationLearning" />
         <module name="mavenLearning" />
         <module name="reflecttionLearning" />
+        <module name="ioLearning" />
+        <module name="threadLearning" />
         <module name="collectionLearning" />
       </profile>
     </annotationProcessing>

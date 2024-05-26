@@ -5,9 +5,13 @@
     <file url="file://$PROJECT_DIR$/annotationLearning/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/collectionLearning/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/collectionLearning/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ioLearning/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ioLearning/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mavenLearning/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mavenLearning/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/reflecttionLearning/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/reflecttionLearning/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/threadLearning/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/threadLearning/src/main/resources" charset="UTF-8" />
   </component>
 </project>

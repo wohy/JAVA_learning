@@ -12,6 +12,7 @@ public class Main {
         List<StudentObject> list = new ArrayList<StudentObject>();
         list.add(studentOne);
         list.add(studentTwo);
+
         // List.of 返回的只是一个只读的 list
         List<StudentObject> listNewHandler = List.of(studentOne, studentTwo);
         System.out.println(list.size());
@@ -37,7 +38,7 @@ public class Main {
 
 
         List<String> stringList = List.of("A", "B", "C");
-        // contains()、indexOf() 之所以能正常放入String、Integer这些对象，是因为Java标准库定义的这些类已经正确实现了equals()方法
+        // contains()、indexOf() 之所以能正常放入 String、Integer 这些对象，是因为 Java标准库 定义的这些类已经正确实现了 equals() 方法
         System.out.println(stringList.contains(new String("C"))); // true
         System.out.println(stringList.contains("C")); // true
         System.out.println(stringList.indexOf(new String("C"))); // 2
@@ -48,22 +49,24 @@ public class Main {
 
 
         // Map
-        // HashMap之所以能根据key直接拿到value，原因是它内部通过空间换时间的方法，
-        // 用一个大数组存储所有value，并根据key直接计算出value应该存储在哪个索引
+        // HashMap 之所以能根据 key 直接拿到 value ，原因是它内部通过空间换时间的方法，
+        // 用一个大数组存储所有 value，并根据 key 直接计算出 value 应该存储在哪个索引
+        // 通过 key 计算索引的方式就是调用 key 对象的 hashCode() 方法，它返回一个int整数。HashMap 正是通过这个方法直接定位 key 对应的 value 的索引，继而直接返回 value。
         // key 是无序的
         Map<String, StudentObject[]> map = new HashMap<>();
         map.put("一班--小胡老师", new StudentObject[]{studentOne});
         map.put("二班--小黄老师", new StudentObject[]{studentTwo, studentThree, studentFour});
         /*
           正确使用Map必须保证：
-          1.作为key的对象必须正确覆写equals()方法，相等的两个key实例调用equals()必须返回true；
-          2.作为key的对象还必须正确覆写hashCode()方法，且hashCode()方法要严格遵循以下规范：
-             1) 如果两个对象相等，则两个对象的hashCode()必须相等；
-             2) 如果两个对象不相等，则两个对象的hashCode()尽量不要相等。
+          1.作为key的对象必须正确覆写 equals() 方法，相等的两个 key 实例调用 equals() 必须返回 true；
+          2.作为key的对象还必须正确覆写 hashCode() 方法，且 hashCode() 方法要严格遵循以下规范：
+             1) 如果两个对象相等，则两个对象的 hashCode() 必须相等；
+             2) 如果两个对象不相等，则两个对象的 hashCode() 尽量不要相等。
          */
         for(Map.Entry<String, StudentObject[]> entry : map.entrySet()) {
             System.out.println(entry.getKey() + "带领以下学生: " + Arrays.toString(entry.getValue()));
         }
+
         // 如果 key 为枚举类元素 推荐使用EnumMap，既保证速度，也不浪费空间
         Map<DayOfWeek, String> dayMap = new EnumMap<>(DayOfWeek.class);
         dayMap.put(DayOfWeek.MONDAY, "星期一");
@@ -75,9 +78,10 @@ public class Main {
         dayMap.put(DayOfWeek.SUNDAY, "星期日");
         System.out.println(dayMap);
         System.out.println(dayMap.get(DayOfWeek.MONDAY));
+
         // SortedMap 内部会对 key 进行排序，内部是通过 treeMap 来实现的
-        // 使用TreeMap时，放入的Key必须实现Comparable接口。String、Integer这些类已经实现了Comparable接口，因此可以直接作为Key使用。
-        // 作为Key的class没有实现Comparable接口，那么，必须在创建TreeMap时同时指定一个自定义排序算法
+        // 使用 TreeMap 时，放入的 Key 必须实现 Comparable 接口。String、Integer 这些类已经实现了 Comparable 接口，因此可以直接作为 Key 使用。
+        // 作为 Key 的 class 没有实现 Comparable 接口，那么，必须在创建 TreeMap 时同时指定一个自定义排序算法
         Map<StudentObject, Integer> studentObjectMap = new TreeMap<>(new Comparator<StudentObject>() {
             // 根据年纪高到低排序
             public int compare(StudentObject s1, StudentObject s2) {
